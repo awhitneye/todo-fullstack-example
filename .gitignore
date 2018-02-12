@@ -1,1 +1,4 @@
-compiled
+# Not including the following files/directories in git history
+/node_modules
+/dist
+package-lock.json
