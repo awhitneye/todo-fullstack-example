@@ -60,17 +60,29 @@ class App extends React.Component {
       .catch(console.error);
   }
 
+  // Function takes a todo and the new complete bool
+  // - Creates a shallow copy of the todo object by utilizing object spread operator
+  // - Sends shallow copy to be updatedon the back end
+  // - When it completes the update it takes the returned response and updates todo in state
   updateComplete (todo, complete) {
     let newTodo = {...todo};
     newTodo.complete = complete;
     console.log("newTodo: ", newTodo);
     utils.updateTodo(newTodo)
       .then( (response) => {
-        debugger;
         this.setTodoInState(response.data)
       })
       .catch(console.error);
   }
+
+  // Function takes a todo
+  // - Finds where the index at which todo exists in the todos array
+  // - Uses immutability-helper update which creates a new array and replaces
+  //   the old todo with the new todo at the same position
+  // - Sets the state of all todos to be the new array
+  
+  // For more about the immutability-helper:
+  // https://reactjs.org/docs/update.html
 
   setTodoInState(todo) {
     var data = this.state.todos;

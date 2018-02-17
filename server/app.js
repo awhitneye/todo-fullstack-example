@@ -24,7 +24,6 @@ app.use(express.static('./dist'));
 app.use(bodyParser.json());
 
 app.get('/todos', controllers.todos.getTodos);
-app.get('/todo/:id', controllers.todos.getTodo);
 app.post('/todo', controllers.todos.postTodo);
 app.put('/todo', controllers.todos.updateTodo);
 

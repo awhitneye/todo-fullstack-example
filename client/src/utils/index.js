@@ -4,15 +4,13 @@ const utils = {
   fetchTodos: () => {
     return axios.get('/todos')
   },
-  fetchTodo: (id) => {
-    return axios.get('/todos?id='+id.toString())
-  },
   createTodo: (name) => {
     return axios.post('/todo', {name: name})
   },
   updateTodo: (todo) => {
     return axios.put('/todo', todo);
   },
+  // Helper function for converting date string into yyyy-mm-dd format
   convertDateStringForInput: (string) => {
     var date = new Date(string);
     var dd = date.getDate();
