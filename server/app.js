@@ -2,8 +2,10 @@
 // Load express library
 const express = require('express');
 
+const bodyParser = require('body-parser');
+
 // Loads the controllers 
-// -> these are the functions that will be executed by route
+// -> these are the functions that are executed by each route
 const controllers = require('./controllers')
 
 // Initialize express middleware
@@ -19,7 +21,11 @@ const app = express();
 // to localhost:3000/index.html 
 
 app.use(express.static('./dist'));
+app.use(bodyParser.json());
 
-app.use('/hello_world', controllers.helloWorld);
+app.get('/todos', controllers.todos.getTodos);
+app.get('/todo/:id', controllers.todos.getTodo);
+app.post('/todo', controllers.todos.postTodo);
+app.put('/todo', controllers.todos.updateTodo);
 
 module.exports = app;

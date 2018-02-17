@@ -2,6 +2,8 @@ import webpack from 'webpack';
 import path from 'path';
 
 const config = {
+  stats: "verbose",
+  devtool: 'source-map',
   entry: './client/src/app',
   output: {
     path: path.join(__dirname, 'dist'),
@@ -15,7 +17,7 @@ const config = {
         use: [
           { loader: 'babel-loader',
             options: {
-              presets: ['react', 'es2015']
+              presets: ["env", "stage-0", "react"]
             }
           }
         ]

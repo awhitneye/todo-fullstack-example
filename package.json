@@ -3,25 +3,37 @@
   "version": "1.0.0",
   "description": "example todo app",
   "main": "index.js",
+  "babel": {
+    "presets": [
+      "env",
+      "react",
+      "stage-0"
+    ]
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev:server": "nodemon ./server/index.js",
     "build": "webpack --watch",
-    "start": "node ./server/index.js"
+    "start": "nodemon ./server/index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.17.1",
     "babel": "^6.23.0",
+    "body-parser": "^1.18.2",
     "express": "^4.16.2",
+    "immutability-helper": "^2.6.5",
+    "mongoose": "^5.0.5",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
-    "babel-preset-latest": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
     "webpack": "^3.11.0",
     "webpack-dev-server": "^2.11.1"
   }

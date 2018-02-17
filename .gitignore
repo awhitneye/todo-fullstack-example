@@ -1,4 +1,4 @@
 # Not including the following files/directories in git history
 /node_modules
-/dist
+/dist/bundle.js*
 package-lock.json
